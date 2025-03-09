@@ -12,10 +12,11 @@ const Navbar = () => {
 
   const navItems = [
     { name: 'Home', icon: Home, href: 'Home' },
+    { name: 'Info', icon: Info, href: 'platform' },
+    { name: 'Why Us', icon: Award, href: 'why-us' },
     { name: 'About Us', icon: Info, href: 'about' },
     { name: 'Why Us', icon: Award, href: 'why-us' },
     { name: 'Register', icon: Briefcase, href: 'readinessform' },
-    { name: 'Government Schemes', icon: Users, href: 'schemes' }
   ]
 
   useEffect(() => {
@@ -43,7 +44,7 @@ const Navbar = () => {
               alt="Tech Star Logo" 
               className="h-10 w-auto mr-3"
             />
-            <span className="font-bold text-xl bg-gradient-to-r from-cyan-500 to-cyan-700 text-transparent bg-clip-text">VisionFlow 4.0</span>
+            <span className="font-bold text-xl bg-gradient-to-r from-cyan-500 to-cyan-700 text-transparent bg-clip-text">EvolvX 4.0</span>
 
           </div>
 

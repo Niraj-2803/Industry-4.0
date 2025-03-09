@@ -13,6 +13,8 @@ import Phase1Page from "./components/Phases/Phase1";
 import Phase2Page from "./components/Phases/Phase2";
 import Phase3Page from "./components/Phases/Phase3";
 import Phase4Page from "./components/Phases/Phase4";
+import IndustrySection from "./components/industry-section";
+import { LampDemo } from "./components/Company_Home";
 
 function App() {
   return (
@@ -23,12 +25,20 @@ function App() {
           <>
             <Navbar/>
             <Home/>
+            <IndustrySection/>
             <AboutUs/>
             <WhyChooseUs/>
+            <Footer/>
+          </>
+          }
+          />
+          <Route path="/company" element={
+          <>
+            <LampDemo/>
             <ReadinessForm/>
             <ToolsCarousel/>
             <Footer/>
-          </>
+            </>
           }
           />
           <Route path='/readiness-score' element={

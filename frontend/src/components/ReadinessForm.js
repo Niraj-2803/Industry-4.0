@@ -18,7 +18,9 @@ const ReadinessForm = () => {
                 industryType: industry,
             },
         });
+        window.scrollTo(0, 0);
     };
+    
 
     return (
         <div id="readinessform" className="flex flex-col md:flex-row min-h-screen bg-gradient-to-br from-gray-900 via-gray-800 to-black">
@@ -39,7 +41,7 @@ const ReadinessForm = () => {
                 >
                     {/* Form content */}
                     <h2 className="text-xl md:text-2xl font-bold text-center text-gray-800">
-                        Register Here
+                        Enter Company Details
                     </h2>
                     <div>
                         <label htmlFor="companyName" className="block text-gray-700">Company Name</label>
