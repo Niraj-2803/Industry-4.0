@@ -32,11 +32,25 @@ function App() {
           </>
           }
           />
+          <Route path="/vendor" element={
+          <>
+            <LampDemo/>
+            <Footer/>
+            </>
+          }
+          />
           <Route path="/company" element={
           <>
             <LampDemo/>
             <ReadinessForm/>
             <ToolsCarousel/>
+            <Footer/>
+            </>
+          }
+          />
+          <Route path="/counsellor" element={
+          <>
+            <LampDemo/>
             <Footer/>
             </>
           }

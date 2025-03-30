@@ -70,23 +70,23 @@ export default function Phase3Page() {
   const [erpTasks, setErpTasks] = useState([
     {
       id: 1,
-      task: "Select an ERP vendor (e.g., SAP, Tally)",
+      task: "Allocate R&D budgets for Industry 4.0 technologies. ",
       description:
-        "Evaluate and choose an Enterprise Resource Planning solution that best fits our organization's needs. Consider factors like scalability, integration capabilities, and cost-effectiveness.",
+        "Strategically investing in emerging technologies like AI, IoT, and automation",
       completed: false
     },
     {
       id: 2,
-      task: "Develop a responsive website or app",
+      task: "Develop digital twins and simulations. ",
       description:
-        "Create a modern, user-friendly website that works seamlessly across all devices. Implement key features like product catalogs, customer portals, and real-time updates.",
+        "Create digital twins and simulations for real-time analysis and optimization.",
       completed: false
     },
     {
       id: 3,
-      task: "Train employees on ERP usage",
+      task: "Collaborate with academic institutions",
       description:
-        "Conduct comprehensive training sessions to ensure all team members can effectively use the new ERP system. Include hands-on workshops and provide detailed documentation.",
+        "Collaborate with academic institutions involves partnering with universities and research centers to exchange knowledge, conduct joint research, and drive innovation.",
       completed: false
     }
   ])
@@ -94,23 +94,23 @@ export default function Phase3Page() {
   const [iotTasks, setIotTasks] = useState([
     {
       id: 1,
-      task: "Conduct a feasibility study for IoT integration",
+      task: "Conduct workshops on IoT, AI, and ERP tools.",
       description:
-        "Analyze the potential impact and requirements of implementing IoT solutions. Identify key areas where IoT can improve efficiency and reduce costs.",
+        "Host workshops on IoT, AI, and ERP tools for hands-on industry training.",
       completed: false
     },
     {
       id: 2,
-      task: "Procure IoT devices from certified vendors",
+      task: "Measure skill improvements through assessments.",
       description:
-        "Source high-quality IoT devices from reliable manufacturers. Ensure all devices meet industry standards and security requirements.",
+        "Evaluate skill growth using structured assessments and benchmarks.",
       completed: false
     },
     {
       id: 3,
-      task: "Build a centralized monitoring platform",
+      task: "Partner with training organizations.",
       description:
-        "Develop a unified dashboard to monitor and control all IoT devices. Implement real-time analytics and automated alert systems.",
+        "Collaborate with training organizations to upskill the workforce in Industry 4.0 technologies.",
       completed: false
     }
   ])
@@ -157,7 +157,7 @@ export default function Phase3Page() {
               <span className="text-white">Phase 1</span>
             </div>
             <h1 className="text-white text-4xl font-bold bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent">
-              Phase 1: Foundation
+              Phase 3: Integration and Scalability
             </h1>
           </div>
           <a
@@ -179,13 +179,10 @@ export default function Phase3Page() {
           <div className="flex gap-8 items-start">
             <div className="w-[60%]">
               <h2 className="text-2xl text-white font-semibold mb-4 relative z-10">
-                Step 1: ERP / Company Website
+                Step 6:  Research and Development (R&D)
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Objective: Set up ERP systems for seamless departmental
-                integration and a user-friendly website for customer
-                interaction. This foundation will enable digital transformation
-                and improve operational efficiency.
+                Objective:  Invest in R&D for continuous innovation and process optimization.  
               </p>
 
               <div className="space-y-6 mb-8">
@@ -203,35 +200,28 @@ export default function Phase3Page() {
                 <h3 className="text-white text-lg font-semibold">Resources:</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="https://www.sap.com/india/"
+                    href="https://respark.iitm.ac.in/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    SAP India <ExternalLink size={16} />
+                    Institutions <ExternalLink size={16} />
                   </a>
                   <a
-                    href="https://tallysolutions.com/"
+                    href="https://tallysolutions.comhttps://www.startupindia.gov.in/ ). /"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    Tally Solutions <ExternalLink size={16} />
+                    Government Schemes <ExternalLink size={16} />
                   </a>
-                  <a
-                    href="https://www.digitalindia.gov.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
-                  >
-                    Digital India Initiative <ExternalLink size={16} />
-                  </a>
+                  
                 </div>
               </div>
             </div>
               <div className="mt-24 h-[400px] w-[40%] flex items-center justify-center"> {/* Fixed height container */}
                 <img 
-                  src="/erp-phases.jpg"
+                  src=""
                   alt="ERP System Illustration"
                   className="rounded-lg w-full h-full object-contain" /* Changed to object-contain */
                 />
@@ -246,12 +236,10 @@ export default function Phase3Page() {
           <div className="flex gap-8 items-start">
             <div className="flex-1">
               <h2 className="text-2xl text-white font-semibold mb-4 relative z-10">
-                Step 2: Technology of Things (IoT)
+                Step 7: Skill Level 
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Objective: Deploy IoT-enabled devices and smart monitoring
-                systems to create an interconnected ecosystem that enhances
-                operational visibility and enables data-driven decision making.
+                Objective: Upskill employees in Industry 4.0 technologies. 
               </p>
 
               <div className="space-y-6 mb-8">
@@ -269,27 +257,20 @@ export default function Phase3Page() {
                 <h3 className="text-white text-lg font-semibold">Resources:</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="https://www.bosch.in/"
+                    href="https://skillindia.gov.in/ "
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    Bosch India IoT Solutions <ExternalLink size={16} />
+                    Skill India <ExternalLink size={16} />
                   </a>
-                  <a
-                    href="https://samarthudyog-i40.in/"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
-                  >
-                    SAMARTH Udyog <ExternalLink size={16} />
-                  </a>
+                  
                 </div>
               </div>
             </div>
             <div className="mt-24 h-[350px] w-[40%] flex items-center justify-center"> {/* Fixed height container */}
               <img 
-                src="/iot-phases.jpg"
+                src=""
                 alt="IoT System Illustration"
                 className="rounded-lg w-full h-full object-contain" /* Changed to object-contain */
               />

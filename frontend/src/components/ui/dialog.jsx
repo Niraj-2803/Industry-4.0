@@ -17,3 +17,11 @@ export function DialogTitle({ children }) {
 export function DialogDescription({ children }) {
   return <p className="text-gray-400 text-sm">{children}</p>;
 }
+
+export function DialogClose({ onClose, children }) {
+  return (
+    <button onClick={onClose} className="text-gray-400 text-sm hover:text-gray-200">
+      {children}
+    </button>
+  );
+}

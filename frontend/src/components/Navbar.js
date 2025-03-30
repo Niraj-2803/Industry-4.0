@@ -16,7 +16,6 @@ const Navbar = () => {
     { name: 'Why Us', icon: Award, href: 'why-us' },
     { name: 'About Us', icon: Info, href: 'about' },
     { name: 'Why Us', icon: Award, href: 'why-us' },
-    { name: 'Register', icon: Briefcase, href: 'readinessform' },
   ]
 
   useEffect(() => {

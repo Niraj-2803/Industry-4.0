@@ -14,6 +14,8 @@
     "cogs": "^4.8.5",
     "framer-motion": "^11.11.17",
     "headlessui": "^0.0.0",
+    "html2canvas": "^1.4.1",
+    "jspdf": "^3.0.0",
     "lucide-react": "^0.462.0",
     "motion": "^12.4.7",
     "react": "^18.2.0",

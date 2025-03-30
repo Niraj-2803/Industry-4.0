@@ -228,7 +228,7 @@ export default function Phase2Page() {
             </div>
               <div className="mt-24 h-[400px] w-[40%] flex items-center justify-center"> {/* Fixed height container */}
                 <img 
-                  src="/erp-phases.jpg"
+                  src=""
                   alt="ERP System Illustration"
                   className="rounded-lg w-full h-full object-contain" /* Changed to object-contain */
                 />
@@ -284,7 +284,7 @@ export default function Phase2Page() {
             </div>
             <div className="mt-24 h-[350px] w-[40%] flex items-center justify-center"> {/* Fixed height container */}
               <img 
-                src="/iot-phases.jpg"
+                src=""
                 alt="IoT System Illustration"
                 className="rounded-lg w-full h-full object-contain" /* Changed to object-contain */
               />
