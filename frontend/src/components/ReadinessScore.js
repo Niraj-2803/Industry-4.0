@@ -351,11 +351,11 @@ const ReadinessScore = () => {
           onClick={() => navigate("/")}
         >
           <div className="relative">
-            <img src="/logo.png" alt="Tech Star Logo" className="h-12 w-auto mr-3" />
+            <img src="/logo.png" alt="4.0 logo" className="h-12 w-auto mr-3" />
             <div className="absolute -top-1 -right-1 w-4 h-4 bg-cyan-400 rounded-full animate-pulse"></div>
           </div>
           <span className="font-bold text-2xl bg-gradient-to-r from-cyan-400 via-cyan-300 to-cyan-500 text-transparent bg-clip-text drop-shadow-lg">
-            EvolvX 4.0
+            EvolvX
           </span>
         </button>
 
