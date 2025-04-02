@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className="flex items-center">
             <img 
               src="/logo.png" 
-              alt="Tech Star Logo" 
+              alt="4.0 Logo" 
               className="h-10 w-auto mr-3"
             />
             <span className="font-bold text-xl bg-gradient-to-r from-cyan-500 to-cyan-700 text-transparent bg-clip-text">EvolvX 4.0</span>
