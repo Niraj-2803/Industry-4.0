@@ -1,6 +1,6 @@
 "use client"
 
-import { useNavigate } from "react-router-dom";
+import { replace, useNavigate } from "react-router-dom";
 import { motion } from "framer-motion"
 import {
   Building2,
@@ -98,8 +98,15 @@ export default function IndustrySection() {
                 <CardFooter>
                   <Button
                      onClick={() => {
-                      navigate(`/${card.title}`);
-                      window.scrollTo(0, 0); // Scroll to the top
+                      alert(`/${card.title}`);
+                      if (`/${card.title}` === '/Vendor') {
+                        window.open('https://v0-vendor-dashboard-dlbbbt.vercel.app/dashboard', '_blank');
+                      }
+                    
+                      else{
+                        navigate(`/${card.title}`);
+                        window.scrollTo(0, 0); // S
+                      }
                     }}
                     variant="outline"
                     className={`w-full border-gray-700 text-gray-200 hover:bg-gradient-to-r ${card.color} hover:border-transparent hover:text-white group-hover:border-transparent transition-all duration-300 rounded-lg`}
