@@ -98,7 +98,6 @@ export default function IndustrySection() {
                 <CardFooter>
                   <Button
                      onClick={() => {
-                      alert(`/${card.title}`);
                       if (`/${card.title}` === '/Vendor') {
                         window.open('https://v0-vendor-dashboard-dlbbbt.vercel.app/dashboard', '_blank');
                       }
