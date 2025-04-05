@@ -10,7 +10,8 @@ import {
   AlertDialogDescription,
   AlertDialogFooter,
   AlertDialogHeader,
-  AlertDialogTitle } from "../ui/alert-dialog"
+  AlertDialogTitle,
+} from "../ui/alert-dialog"
 import { Button } from "../ui/button"
 
 // 3D Model Component
@@ -22,30 +23,27 @@ function TaskItem({ task, onToggle }) {
   return (
     <>
       <div className="space-y-2 relative z-10">
-  <div className="flex items-center gap-3">
-    <Button
-      variant={task.completed ? "default" : "outline"}
-      className={`w-full justify-start gap-2 rounded-xl ${
-        task.completed 
-          ? "bg-cyan-500 hover:bg-cyan-700" 
-          : "bg-slate-300 hover:bg-slate-500" 
-      }`}
-      onClick={() => !task.completed && setDialogOpen(true)}
-    >
-      {task.completed && <CheckCircle2 className="h-4 w-4" />}
-      <span className="font-medium">{task.task}</span>
-    </Button>
-  </div>
-  <p className="text-gray-400 text-sm ml-1">{task.description}</p>
-</div>
+        <div className="flex items-center gap-3">
+          <Button
+            variant={task.completed ? "default" : "outline"}
+            className={`w-full justify-start gap-2 rounded-xl ${
+              task.completed ? "bg-cyan-500 hover:bg-cyan-700" : "bg-slate-300 hover:bg-slate-500"
+            }`}
+            onClick={() => !task.completed && setDialogOpen(true)}
+          >
+            {task.completed && <CheckCircle2 className="h-4 w-4" />}
+            <span className="font-medium">{task.task}</span>
+          </Button>
+        </div>
+        <p className="text-gray-400 text-sm ml-1">{task.description}</p>
+      </div>
 
       <AlertDialog open={dialogOpen} onOpenChange={setDialogOpen}>
         <AlertDialogContent>
           <AlertDialogHeader>
             <AlertDialogTitle>Confirm Task Completion</AlertDialogTitle>
             <AlertDialogDescription>
-              Are you sure you have completed this task? This action can be
-              undone later if needed.
+              Are you sure you have completed this task? This action can be undone later if needed.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
@@ -72,23 +70,23 @@ export default function Phase2Page() {
       id: 1,
       task: "Identify AI use cases specific to your industry.",
       description:
-        "Evaluate and choose an Enterprise Resource Planning solution that best fits our organization's needs. Consider factors like scalability, integration capabilities, and cost-effectiveness.",
-      completed: false
+        "Research and document AI applications that can provide value to your specific industry sector. Focus on use cases with proven ROI and implementation feasibility.",
+      completed: false,
     },
     {
       id: 2,
       task: "Develop or deploy AI models (e.g., TensorFlow).",
       description:
-        "Create a modern, user-friendly website that works seamlessly across all devices. Implement key features like product catalogs, customer portals, and real-time updates.",
-      completed: false
+        "Build or implement AI models using frameworks like TensorFlow to address the identified use cases. Ensure proper integration with existing systems.",
+      completed: false,
     },
     {
       id: 3,
       task: "Monitor and refine AI performance.",
       description:
-        "Conduct comprehensive training sessions to ensure all team members can effectively use the new ERP system. Include hands-on workshops and provide detailed documentation.",
-      completed: false
-    }
+        "Establish metrics to track AI model performance and implement continuous improvement processes to enhance accuracy and efficiency over time.",
+      completed: false,
+    },
   ])
 
   const [iotTasks, setIotTasks] = useState([
@@ -96,48 +94,69 @@ export default function Phase2Page() {
       id: 1,
       task: "Implement multi-factor authentication.",
       description:
-        "Analyze the potential impact and requirements of implementing IoT solutions. Identify key areas where IoT can improve efficiency and reduce costs.",
-      completed: false
+        "Deploy MFA across all critical systems and access points to enhance security posture and prevent unauthorized access through compromised credentials.",
+      completed: false,
     },
     {
       id: 2,
       task: "Conduct regular vulnerability assessments.",
       description:
-        "Source high-quality IoT devices from reliable manufacturers. Ensure all devices meet industry standards and security requirements.",
-      completed: false
+        "Establish a schedule for regular security scans and penetration testing to identify and address potential vulnerabilities before they can be exploited.",
+      completed: false,
     },
     {
       id: 3,
       task: "Develop an incident response plan.",
       description:
-        "Develop a unified dashboard to monitor and control all IoT devices. Implement real-time analytics and automated alert systems.",
-      completed: false
-    }
+        "Create a comprehensive plan detailing steps to take during security incidents, including roles, communication protocols, and recovery procedures.",
+      completed: false,
+    },
+  ])
+
+  const [cloudTasks, setCloudTasks] = useState([
+    {
+      id: 1,
+      task: "Select a cloud provider (e.g., AWS, Azure).",
+      description:
+        "Evaluate and choose a cloud service provider that best meets your organization's requirements for scalability, security, and cost-effectiveness.",
+      completed: false,
+    },
+    {
+      id: 2,
+      task: "Migrate applications and databases to the cloud.",
+      description:
+        "Plan and execute the migration of existing applications and databases to your chosen cloud platform with minimal disruption to operations.",
+      completed: false,
+    },
+    {
+      id: 3,
+      task: "Implement disaster recovery protocols.",
+      description:
+        "Develop and test comprehensive disaster recovery procedures to ensure business continuity in case of system failures or data loss.",
+      completed: false,
+    },
   ])
 
   const [isCompleted, setIsCompleted] = useState(false)
 
   useEffect(() => {
     const allTasksCompleted =
-      erpTasks.every(task => task.completed) &&
-      iotTasks.every(task => task.completed)
+      erpTasks.every((task) => task.completed) &&
+      iotTasks.every((task) => task.completed) &&
+      cloudTasks.every((task) => task.completed)
     setIsCompleted(allTasksCompleted)
-  }, [erpTasks, iotTasks])
+  }, [erpTasks, iotTasks, cloudTasks])
 
-  const toggleErpTask = taskId => {
-    setErpTasks(tasks =>
-      tasks.map(task =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
-    )
+  const toggleErpTask = (taskId) => {
+    setErpTasks((tasks) => tasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task)))
   }
 
-  const toggleIotTask = taskId => {
-    setIotTasks(tasks =>
-      tasks.map(task =>
-        task.id === taskId ? { ...task, completed: !task.completed } : task
-      )
-    )
+  const toggleIotTask = (taskId) => {
+    setIotTasks((tasks) => tasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task)))
+  }
+
+  const toggleCloudTask = (taskId) => {
+    setCloudTasks((tasks) => tasks.map((task) => (task.id === taskId ? { ...task, completed: !task.completed } : task)))
   }
 
   return (
@@ -147,10 +166,7 @@ export default function Phase2Page() {
         <div className="flex items-center justify-between mb-8">
           <div>
             <div className="flex items-center gap-2 text-gray-400 mb-2">
-              <a
-                href="/timeline"
-                className="hover:text-white transition-colors"
-              >
+              <a href="/timeline" className="hover:text-white transition-colors">
                 Timeline
               </a>
               <ChevronRight size={16} />
@@ -163,23 +179,21 @@ export default function Phase2Page() {
           <a
             href="/timeline"
             className={`${
-              isCompleted
-                ? "bg-green-600 hover:bg-green-700"
-                : "bg-red-600 hover:bg-red-700"
+              isCompleted ? "bg-green-600 hover:bg-green-700" : "bg-red-600 hover:bg-red-700"
             } text-white text-sm font-semibold px-6 py-2 rounded-full transition-all duration-300`}
           >
             {isCompleted ? "Completed" : "In Progress"}
           </a>
         </div>
 
-        {/* ERP Section */}
+        {/* AI Section */}
         <div className="glass-card rounded-2xl p-8 mb-8 relative overflow-hidden border border-gray-800">
           <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-600/5 rounded-full blur-3xl -z-10" />
 
           <div className="flex gap-8 items-start">
             <div className="w-[60%]">
               <h2 className="text-2xl text-white font-semibold mb-4 relative z-10">
-              Step 3: Artificial Intelligence (AI)
+                Step 3: Artificial Intelligence (AI)
               </h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
                 Objective: Leverage AI for predictive analytics, workflow optimization, and customer insights.
@@ -187,76 +201,176 @@ export default function Phase2Page() {
 
               <div className="space-y-6 mb-8">
                 <h3 className="text-white text-lg font-semibold">Tasks:</h3>
-                {erpTasks.map(task => (
-                  <TaskItem
-                    key={task.id}
-                    task={task}
-                    onToggle={toggleErpTask}
-                  />
+                {erpTasks.map((task) => (
+                  <TaskItem key={task.id} task={task} onToggle={toggleErpTask} />
                 ))}
               </div>
 
-              <div className="space-y-4">
+              <div className="space-y-4 mb-6">
                 <h3 className="text-white text-lg font-semibold">Resources:</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="https://www.sap.com/india/"
+                    href="https://www.bain.com/vector-digital/advanced-analytics/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    SAP India <ExternalLink size={16} />
+                    Bain & Company Analytics <ExternalLink size={16} />
                   </a>
                   <a
-                    href="https://www.nvidia.com/en-in/ "
+                    href="https://www.wipro.com/ai"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    NVIDIA AI Solutions <ExternalLink size={16} />
-                  </a>
-                  <a
-                    href="https://www.niti.gov.in/ai-for-all"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
-                  >
-                    AI for All by NITI Aayog <ExternalLink size={16} />
+                    Wipro AI Solutions <ExternalLink size={16} />
                   </a>
                 </div>
               </div>
             </div>
-              <div className="mt-24 h-[400px] w-[40%] flex items-center justify-center"> {/* Fixed height container */}
-                <img 
-                  src=""
-                  alt="ERP System Illustration"
-                  className="rounded-lg w-full h-full object-contain" /* Changed to object-contain */
-                />
-              </div>
+            <div className="mt-24 h-[400px] w-[40%] flex items-center justify-center">
+              <img
+                src="/ai_phases.jpg"
+                alt="AI System Illustration"
+                className="rounded-lg w-full h-full object-contain"
+              />
+            </div>
           </div>
         </div>
 
-        {/* IoT Section */}
-        <div className="glass-card rounded-2xl p-8 relative overflow-hidden border border-gray-800">
+        {/* Cybersecurity Section */}
+        <div className="glass-card rounded-2xl p-8 mb-8 relative overflow-hidden border border-gray-800">
           <div className="absolute top-0 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl -z-10" />
 
           <div className="flex gap-8 items-start">
             <div className="flex-1">
-              <h2 className="text-2xl text-white font-semibold mb-4 relative z-10">
-              Step 4: Cybersecurity
-              </h2>
+              <h2 className="text-2xl text-white font-semibold mb-4 relative z-10">Step 4: Cybersecurity</h2>
               <p className="text-gray-300 mb-6 leading-relaxed">
-                Objective: Strengthen digital security protocols and data protection. 
+                Objective: Strengthen digital security protocols and data protection.
               </p>
 
               <div className="space-y-6 mb-8">
                 <h3 className="text-white text-lg font-semibold">Tasks:</h3>
-                {iotTasks.map(task => (
-                  <TaskItem
-                    key={task.id}
-                    task={task}
-                    onToggle={toggleIotTask}
-                  />
+                {iotTasks.map((task) => (
+                  <TaskItem key={task.id} task={task} onToggle={toggleIotTask} />
+                ))}
+              </div>
+
+              <div className="space-y-4 mb-6">
+                <h3 className="text-white text-lg font-semibold">Courses:</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <a
+                    href="https://www.mygreatlearning.com/academy/learn-forfree/courses/advanced-cyber-security-threats-and-governance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Advanced Cyber Security Threats and Governance <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://www.fortinet.com/training/cybersecurity-professionals"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Fortinet Free Cybersecurity Training <ExternalLink size={16} />
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-4 mb-6">
+                <h3 className="text-white text-lg font-semibold">Awareness Videos:</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <a
+                    href="https://www.youtube.com/watch?v=4AAsmZ4PdE8"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Security Threats in Smart Factory <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://www.youtube.com/watch?v=EQ7sITyg8Eg"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Industry 4.0 <ExternalLink size={16} />
+                  </a>
+                </div>
+              </div>
+
+              <div className="space-y-4">
+                <h3 className="text-white text-lg font-semibold">Resources:</h3>
+                <div className="grid grid-cols-2 gap-4">
+                  <a
+                    href="https://www.siemens.com/global/en/products/automation/topic-areas/digital-enterprise.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Siemens Digital Industries <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://www.honeywell.com/us/en/solutions/honeywellforge"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Honeywell Forge <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://www.fortinet.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Fortinet <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://www.seqrite.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Quick Heal Technologies (Seqrite) <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://www.paloaltonetworks.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Palo Alto Networks <ExternalLink size={16} />
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div className="mt-24 h-[350px] w-[40%] flex items-center justify-center">
+              <img
+                src="/cs_phases.jpg"
+                alt="Cybersecurity Illustration"
+                className="rounded-lg w-full h-full object-contain"
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Cloud Computing Section */}
+        <div className="glass-card rounded-2xl p-8 relative overflow-hidden border border-gray-800">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-blue-600/5 rounded-full blur-3xl -z-10" />
+
+          <div className="flex gap-8 items-start">
+            <div className="flex-1">
+              <h2 className="text-2xl text-white font-semibold mb-4 relative z-10">Step 5: Cloud Computing</h2>
+              <p className="text-gray-300 mb-6 leading-relaxed">
+                Objective: Leverage cloud infrastructure for scalability, flexibility, and cost optimization.
+              </p>
+
+              <div className="space-y-6 mb-8">
+                <h3 className="text-white text-lg font-semibold">Tasks:</h3>
+                {cloudTasks.map((task) => (
+                  <TaskItem key={task.id} task={task} onToggle={toggleCloudTask} />
                 ))}
               </div>
 
@@ -264,29 +378,37 @@ export default function Phase2Page() {
                 <h3 className="text-white text-lg font-semibold">Resources:</h3>
                 <div className="grid grid-cols-2 gap-4">
                   <a
-                    href="https://www.bosch.in/"
+                    href="https://aws.amazon.com/local/india/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    Bosch India IoT Solutions <ExternalLink size={16} />
+                    AWS India <ExternalLink size={16} />
                   </a>
                   <a
-                    href="https://samarthudyog-i40.in/"
+                    href="https://azure.microsoft.com/en-us/regions/india/"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
                   >
-                    SAMARTH Udyog <ExternalLink size={16} />
+                    Microsoft Azure <ExternalLink size={16} />
+                  </a>
+                  <a
+                    href="https://meity.gov.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-cyan-400 hover:text-cyan-300 flex items-center gap-2 transition-colors"
+                  >
+                    Government Schemes: Cloud First Policy <ExternalLink size={16} />
                   </a>
                 </div>
               </div>
             </div>
-            <div className="mt-24 h-[350px] w-[40%] flex items-center justify-center"> {/* Fixed height container */}
-              <img 
-                src=""
-                alt="IoT System Illustration"
-                className="rounded-lg w-full h-full object-contain" /* Changed to object-contain */
+            <div className="mt-24 h-[350px] w-[40%] flex items-center justify-center">
+              <img
+                src="/cc_phases.jpg"
+                alt="Cloud Computing Illustration"
+                className="rounded-lg w-full h-full object-contain"
               />
             </div>
           </div>
@@ -295,3 +417,4 @@ export default function Phase2Page() {
     </div>
   )
 }
+

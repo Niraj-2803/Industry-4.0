@@ -36,7 +36,7 @@ const Home = () => {
                         Welcome to the future of business transformation! Our AI-Driven System helps Indian companies seamlessly adopt Industry 4.0 with tailored timelines, data-driven insights, and structured guidance. Unlock new opportunities, drive innovation, and achieve sustainable growth with us.
                     </p>
                     <button className="bg-white text-black font-bold text-l px-8 py-3 rounded-full w-fit hover:bg-gray-100 transition-colors">
-                        Get Started
+                        Lets Transform !
                     </button>
                 </div>
             </div>
