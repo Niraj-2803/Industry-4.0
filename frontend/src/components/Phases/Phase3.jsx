@@ -218,7 +218,7 @@ export default function Phase3Page() {
             </div>
             <div className="mt-24 h-[400px] w-[40%] flex items-center justify-center">
               <img
-                src="/placeholder.svg?height=400&width=400"
+                src="/r&d_phases.jpg"
                 alt="R&D Illustration"
                 className="rounded-lg w-full h-full object-contain"
               />
@@ -292,7 +292,7 @@ export default function Phase3Page() {
             </div>
             <div className="mt-24 h-[350px] w-[40%] flex items-center justify-center">
               <img
-                src="/placeholder.svg?height=350&width=350"
+                src="/training_phases.png"
                 alt="Skill Development Illustration"
                 className="rounded-lg w-full h-full object-contain"
               />
