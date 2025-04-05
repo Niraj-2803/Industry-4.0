@@ -139,11 +139,11 @@ const ReadinessScore = () => {
       "Customers can personalize orders through our online platform.",
     ],
     [
-      "Energy consumption is tracked and reported regularly.",
-      "Initiatives are in place to reduce energy usage in production processes.",
-      "Protocols exist to minimize waste during production.",
-      "We have a recycling or repurposing program for materials and by-products.",
-      "Sustainable and ethically sourced materials are prioritized in procurement.",
+      "Compliance with ISO 45001 standards ensures a safe and healthy workplace for employees.",
+      "A structured environmental management system, in accordance with ISO 14001, is actively maintained.",
+      "Supply chain operations align with ISO 28000 standards for security management.",
+      "Product lifecycle assessments are conducted as per ISO 14040 to minimize environmental impact.",
+      "Data privacy and protection policies comply with ISO/IEC 27701 standards.",
     ],
   ]
 
